@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrincipalComponent } from './principal.component';
+import { NgModule } from '@angular/core';
+import { HeaderModule } from '../shared/header/header.module';
 import { PrincipalRoutesModule } from './principal-routing.module';
+import { PrincipalComponent } from './principal.component';
 
 
 
@@ -11,6 +12,8 @@ import { PrincipalRoutesModule } from './principal-routing.module';
   ],
   imports: [
     CommonModule,
+    HeaderModule,
+    
     PrincipalRoutesModule
   ]
 })
