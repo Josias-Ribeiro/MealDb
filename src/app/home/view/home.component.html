@@ -1,1 +1,26 @@
-<h1>home works</h1>
+<div fxLayout="column">
+    <div class="container-first-content">
+        <div fxFlex="100">
+            <span> Seu portal de receitas preferido!</span>
+    
+            <button mat-raised-button >Categorias</button>
+            <button mat-raised-button >Compre o livro</button>
+        </div>
+    
+        <div fxFlex="100">
+            <img src={{primeiraImagem}} alt="Food Image">
+        </div>
+    </div>
+    
+    <div fxFlex="100">
+        
+        <ul>
+            <li *ngFor="let categoria of arrayCategorias | slice: 1: 5 ">
+                {{categoria.strCategory}}     
+                
+                <img src={{categoria.strCategoryThumb}} alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+

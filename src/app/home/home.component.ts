@@ -1,12 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeHttpService } from './services/home-http.service';
+import { CategoriaModel } from '../categorias/model/categoria.model';
 
-@Component({    
-    templateUrl: './view/home.component.html'
+@Component({
+  templateUrl: './view/home.component.html',
+  styleUrls: ['./view/home.component.scss']
 })
-
 export class HomeComponent implements OnInit {
-    constructor() { }
+    arrayCategorias: CategoriaModel[] = [];
+    primeiraImagem: string;
 
-    ngOnInit() {   
-     }
+  constructor(private _httpService: HomeHttpService) {}
+
+  ngOnInit() {
+    this.consultarCategoriaApi()  
+  }  
+
+  consultarCategoriaApi(){
+    this._httpService.consultarCategorias().subscribe((res) => {
+        this.arrayCategorias = res.categories;
+        this.primeiraImagem = res.categories[0].strCategoryThumb
+      });
+  }
 }
