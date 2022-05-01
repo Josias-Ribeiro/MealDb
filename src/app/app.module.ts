@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout'
+import { HeaderModule } from 'src/shared/header/header.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,8 +18,9 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
+    RouterModule,
     
-    
+    HeaderModule,
     BrowserAnimationsModule
   ],
   providers: [],
