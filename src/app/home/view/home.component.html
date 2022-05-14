@@ -1,26 +1,35 @@
-<div fxLayout="column">
-    <div class="container-first-content">
-        <div fxFlex="100">
-            <span> Seu portal de receitas preferido!</span>
-    
-            <button mat-raised-button >Categorias</button>
-            <button mat-raised-button >Compre o livro</button>
-        </div>
-    
-        <div fxFlex="100">
-            <img src={{primeiraImagem}} alt="Food Image">
-        </div>
-    </div>
-    
-    <div fxFlex="100">
+
+    <div fxFlex="100" fxLayout="column">
+        <!-- 1ª LINHA -->
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-around center">
+            <div fxFlex="50" fxLayout="column">
+                <span> Seu portal de receitas preferido!</span>
         
-        <ul>
-            <li *ngFor="let categoria of arrayCategorias | slice: 1: 5 ">
-                {{categoria.strCategory}}     
+                <div fxLayoutAlign="space-around center">
+                    <button mat-raised-button color="warn" class="botoes-header" >Categorias</button>
+                    <button mat-raised-button color="accent" class="botoes-header" >Compre o livro</button>
+                </div>
                 
-                <img src={{categoria.strCategoryThumb}} alt="">
-            </li>
-        </ul>
+            </div>
+        
+            <div fxFlex="30">
+                <img src={{primeiraImagem}} alt="Food Image">
+            </div>
+        </div>
+        <!--/ 1ª LINHA -->
+        
+        <!-- 2ª LINHA -->
+                 
+            <ul fxFlex="100" fxLayout="row">
+                <li *ngFor="let categoria of arrayCategorias | slice: 1: 5 ">
+                    {{categoria.strCategory}}     
+                    
+                    <img src={{categoria.strCategoryThumb}} alt="">
+                </li>
+            </ul>
+        
+        <!-- /2ª LINHA -->
+    
     </div>
-</div>
+    
 
