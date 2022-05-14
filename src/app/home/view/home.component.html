@@ -1,35 +1,41 @@
+<div fxFlex="100" fxLayout="column">
+  <!-- 1ª LINHA -->
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlex="30" fxLayout="column">
+      <span> Seu portal de receitas preferido!</span>
 
-    <div fxFlex="100" fxLayout="column">
-        <!-- 1ª LINHA -->
-        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-around center">
-            <div fxFlex="50" fxLayout="column">
-                <span> Seu portal de receitas preferido!</span>
-        
-                <div fxLayoutAlign="space-around center">
-                    <button mat-raised-button color="warn" class="botoes-header" >Categorias</button>
-                    <button mat-raised-button color="accent" class="botoes-header" >Compre o livro</button>
-                </div>
-                
-            </div>
-        
-            <div fxFlex="30">
-                <img src={{primeiraImagem}} alt="Food Image">
-            </div>
-        </div>
-        <!--/ 1ª LINHA -->
-        
-        <!-- 2ª LINHA -->
-                 
-            <ul fxFlex="100" fxLayout="row">
-                <li *ngFor="let categoria of arrayCategorias | slice: 1: 5 ">
-                    {{categoria.strCategory}}     
-                    
-                    <img src={{categoria.strCategoryThumb}} alt="">
-                </li>
-            </ul>
-        
-        <!-- /2ª LINHA -->
-    
+      <div fxLayoutAlign="space-around center" style="margin-top: 1rem">
+        <button mat-raised-button color="warn" class="botoes-header">
+          Categorias
+        </button>
+        <button mat-raised-button color="accent" class="botoes-header">
+          Compre o livro
+        </button>
+      </div>
     </div>
-    
 
+    <div fxFlex="23">
+      <img src="{{ primeiraImagem }}" alt="Food Image" />
+    </div>
+  </div>
+  <!--/ 1ª LINHA -->
+
+  <!-- 2ª LINHA -->
+
+  <ul
+    fxFlex="100"
+    fxLayout="row"
+    style="list-style: none; margin-top: 2rem;"
+    fxLayoutAlign="center center"
+    fxLayoutGap="12px"
+  >
+    <li *ngFor="let categoria of arrayCategorias | slice: 1:5" fxFlex="20">
+      <mdb-card
+        tituloCabecalho="{{ categoria.strCategory }}"
+        conteudoCard="{{ categoria.strCategoryThumb }}"
+      ></mdb-card>
+    </li>
+  </ul>
+
+  <!-- /2ª LINHA -->
+</div>
